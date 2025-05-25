@@ -13,10 +13,10 @@ Projeto desenvolvido com NestJS
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/EmersonTanno/ibge_back.git
 
 # Acesse a pasta do projeto
-cd seu-repositorio
+cd ibge_back
 
 # Instale as dependências
 npm install
@@ -211,4 +211,111 @@ Resposta:
     }
 ]
 ```
-
+### 📊 Comparação de dois nomes ao longo do tempo
+GET `/comparison?name1=nomeBuscado&name2=nomeBuscado` </br>
+Exemplo: `http://localhost:3000/comparison?name1=matheus&name2=herick` </br>
+Resposta:
+`200 OK`
+``` json
+[
+    {
+        "decada": "1930",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 90
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 0
+        }
+    },
+    {
+        "decada": "1930,1940",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 203
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 0
+        }
+    },
+    {
+        "decada": "1940,1950",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 298
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 0
+        }
+    },
+    {
+        "decada": "1950,1960",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 470
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 0
+        }
+    },
+    {
+        "decada": "1960,1970",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 684
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 0
+        }
+    },
+    {
+        "decada": "1970,1980",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 2370
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 75
+        }
+    },
+    {
+        "decada": "1980,1990",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 13765
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 302
+        }
+    },
+    {
+        "decada": "1990,2000",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 142256
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 719
+        }
+    },
+    {
+        "decada": "2000,2010",
+        "nome1": {
+            "nome": "matheus",
+            "frequencia": 190298
+        },
+        "nome2": {
+            "nome": "herick",
+            "frequencia": 1539
+        }
+    }
+]
+```
