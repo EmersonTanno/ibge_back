@@ -17,18 +17,6 @@ export class IbgeApiService {
     }
   }
 
-  async getNameDataByUF(name: string, uf: string): Promise<any> {
-    try {
-      const response = await axios.get(`${this.baseUrl}/censos/nomes/${name}?localidade=${uf}`);
-      return response.data;
-    } catch (error) {
-      throw new HttpException(
-        'Erro ao buscar dados do IBGE por UF.',
-        HttpStatus.BAD_GATEWAY,
-      );
-    }
-  }
-
   async getRankingByDecadeAndLocation(decade: number, localidade: string): Promise<any> {
     try {
       const response = await axios.get(
