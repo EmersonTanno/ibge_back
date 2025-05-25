@@ -6,7 +6,11 @@ export class EvolutionController {
   constructor(private readonly evolutionService: EvolutionService) {}
 
   @Get()
-  async getNameEvolution(@Query('name') name: string) {
-    return this.evolutionService.getNameEvolution(name);
+  async getNameEvolution(
+    @Query('name') name: string,
+    @Query('startDecade') startDecade: string,
+    @Query('endDecade') endDecade: string,
+  ) {
+    return this.evolutionService.getNameEvolution(name, startDecade, endDecade);
   }
 }
