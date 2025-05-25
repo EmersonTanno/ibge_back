@@ -29,15 +29,18 @@ export class IbgeApiService {
     }
   }
 
-  async getTopNamesByLocalidade(uf: string): Promise<any> {
+  async getRankingByDecadeAndLocation(decade: number, localidade: string): Promise<any> {
     try {
-      const response = await axios.get(`${this.baseUrl}/censos/nomes/masculino+feminino?localidade=${uf}`);
+      const response = await axios.get(
+        `${this.baseUrl}/censos/nomes/ranking?decada=${decade}&localidade=${localidade}`
+      );
       return response.data;
     } catch (error) {
       throw new HttpException(
-        'Erro ao buscar os nomes mais comuns na localidade.',
+        'Erro ao buscar ranking por década e localidade.',
         HttpStatus.BAD_GATEWAY,
       );
     }
   }
+
 }
